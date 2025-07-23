@@ -159,6 +159,40 @@
                     height: 20px;
                 }
             }
+            
+            /* ==== 新增备案号样式 ==== */
+            #icp-container {
+                position: fixed;
+                bottom: 15px;
+                right: 20px;
+                z-index: 1000;
+                opacity: 0.7;
+                pointer-events: auto; /* 允许鼠标事件 */
+                transition: opacity 0.3s;
+            }
+            
+            #icp-container:hover {
+                opacity: 1;
+            }
+            
+            #icp-container a {
+                text-decoration: none;
+                color: #f0f0f0; 
+                font-family: Arial, sans-serif;
+                font-size: 12px;
+                background: rgba(0,0,0,0.5);
+                padding: 4px 8px;
+                border-radius: 3px;
+            }
+            
+            /* 移动端适配 */
+            @media (max-width: 768px) {
+                #icp-container {
+                    bottom: 10px;
+                    right: 10px;
+                    font-size: 10px;
+                }
+            }
         </style>
         <script>
             window.ga =
@@ -173,6 +207,14 @@
     </head>
     <body>
         <canvas></canvas>
+        
+        <!-- 备案号容器 -->
+        <div id="icp-container">
+            <a href="https://beian.miit.gov.cn/" target="_blank">
+                蜀ICP备2025153554号
+            </a>
+        </div>
+        
         <div class="wrap">
             <div class="main">
                 <h1>WishMelz</h1>
@@ -218,11 +260,5 @@
             </footer>
         </div>
         <script src="assets/script.js"></script>
-        <!-- 备案号容器 -->
-<div id="icp-container">
-    <a href="https://beian.miit.gov.cn/" target="_blank">
-        蜀ICP备2025153554号
-    </a>
-</div>
     </body>
 </html>
